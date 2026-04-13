@@ -1,0 +1,46 @@
+name: iOS Build
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    name: iOS Build
+    permissions: write-all
+    runs-on: macos-14
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+
+      - name: Setup Haxe
+        uses: krdlab/setup-haxe@master
+        with:
+          haxe-version: 4.3.7
+          
+      - name: Install Libraries
+        run: |
+         haxelib install hxpkg --global
+         haxelib run hxpkg setup --global
+         haxelib run hxpkg install
+         haxelib remove lime
+         haxelib remove hxcpp
+         haxelib git lime https://github.com/FunkinCrew/lime 2fdc4b4f8460e9e36bd5ced9098af135072acb05 --quiet
+         haxelib git hxcpp https://github.com/FunkinCrew/hxcpp 5932340d095a7eea8635fe4d1355f1c0efd0b3c2 --quiet
+         haxelib run lime rebuild hxcpp
+      - name: Compile
+        run: haxelib run lime build ios -nosign
+
+      - name: Making ipa file
+        run: |
+          brew install ldid
+          cd export/release/ios/build/Release-iphoneos/BaldiFunkin.app
+          ldid -S../../../BaldiFunkin/BaldiFunkin.entitlements BaldiFunkin
+          cd ..
+          mkdir Payload
+          mv BaldiFunkin.app Payload
+          zip -r BaldiFunkin.ipa Payload
+      - name: Upload Artifact
+        uses: actions/upload-artifact@main
+        with:
+          name: BaldiFunkin iOS
+          path: export/release/ios/build/Release-iphoneos/*.ipa
+          if-no-files-found: error
