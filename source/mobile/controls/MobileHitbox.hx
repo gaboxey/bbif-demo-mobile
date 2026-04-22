@@ -66,7 +66,7 @@ class MobileHitbox extends FlxMobileInputManager
 		hint.onDown.callback = function() {
 		    if (hintTween != null) hintTween.cancel();
 		    
-		    hintTween = FlxTween.tween(hint, {alpha: alphaTarget}, 0.075, {
+		    hintTween = FlxTween.tween(hint, {alpha: alphaTarget}, 0.015, {
 		        ease: FlxEase.circInOut,
 		        onComplete: function(_) { hintTween = null; }
 		    });
@@ -75,7 +75,7 @@ class MobileHitbox extends FlxMobileInputManager
 		hint.onUp.callback = function() {
 		    if (hintTween != null) hintTween.cancel();
 		    
-		    hintTween = FlxTween.tween(hint, {alpha: 0.00001}, 0.15, {
+		    hintTween = FlxTween.tween(hint, {alpha: 0.00001}, 0.015, {
 		        ease: FlxEase.circInOut,
 		        onComplete: function(_) { hintTween = null; }
 		    });

@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<TextureAtlas imagePath="assets.png" width="6289" height="1080">
-	<SubTexture name="door0000" x="5138" y="0" width="578" height="1079" frameX="-0" frameY="-0" frameWidth="578" frameHeight="1079"/>
-	<SubTexture name="doorFrame0000" x="3860" y="0" width="1268" height="1080" frameX="-355" frameY="-0" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="doorbg0000" x="0" y="0" width="1920" height="1080" frameX="-0" frameY="-0" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="gear0000" x="5726" y="0" width="563" height="561" frameX="-7" frameY="-7" frameWidth="577" frameHeight="575"/>
-	<SubTexture name="multiply0000" x="1930" y="0" width="1920" height="1080" frameX="-0" frameY="-0" frameWidth="1920" frameHeight="1080"/>
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="assets.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="door0000" x="1272" y="1084" width="582" height="1083" frameX="2" frameY="2" frameWidth="578" frameHeight="1079"/>
+	<SubTexture name="doorFrame0000" x="0" y="1084" width="1272" height="1084" frameX="-353" frameY="2" frameWidth="1920" frameHeight="1080"/>
+	<SubTexture name="doorbg0000" x="1924" y="0" width="1924" height="1084" frameX="2" frameY="2" frameWidth="1920" frameHeight="1080"/>
+	<SubTexture name="gear0000" x="1854" y="1084" width="567" height="565" frameX="-5" frameY="-5" frameWidth="577" frameHeight="575"/>
+	<SubTexture name="multiply0000" x="0" y="0" width="1924" height="1084" frameX="2" frameY="2" frameWidth="1920" frameHeight="1080"/>
 </TextureAtlas>
