@@ -1,3 +1,7 @@
+# Mobile Port
+
+![Funkin' Network](https://github.com/DeveloperPorting/fnf-BBif-demo2026-mobile)
+
 # Baldi's basics in funkin' 2026 Demo Source code!
 
 ![](https://github.com/FixedData/fnf-BBiF-demo2026/blob/main/art/banner.png)
